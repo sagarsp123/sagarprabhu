@@ -1,0 +1,9 @@
+Hello I'am
+Sagar Prabhu
+Web Developer/ Designer and Software Engineer
+
+## colors
+green : #01be96
+
+name font family 
+font-family: 'Secular One', sans-serif;

@@ -1,0 +1,137 @@
+import React, { useRef } from 'react'
+import Slider from 'react-slick';
+import Project from './Project';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import styled from 'styled-components';
+import Home1 from "../assets/Home1.JPG";
+import HMS1 from "../assets/HMS_1.png";
+import Kaggle0 from "../assets/Proj_4.PNG";
+import Cadent_Logo from "../assets/Cadent_Logo.jpg";
+import TOI_1 from "../assets/TOI_1.PNG";
+import Product_3 from "../assets/Product_3.png";
+
+
+let data = [
+    {
+        img : Home1,
+        disc : "BookEasy",
+        link: "/project1"
+    },
+    {
+        img : HMS1,
+        disc : "Curative Care Hospital Management System",
+        link: "/project2"
+    },
+    {
+        img : Product_3,
+        disc : "Product Review Analysis for Genuine Rating",
+        link: "/project3"
+    },
+    {
+        img : Kaggle0,
+        disc : "Loan Prediction Analysis System",
+        link: "/project4"
+    },
+    {
+        img : Cadent_Logo,
+        disc : "CADENT TV Company,US Dev Applications",
+        link: "/project5"
+    },
+    {
+      img : TOI_1,
+      disc : "Times of India Blogs Page- Freelance Work",
+      link: "/project6"
+    },
+    {
+      img : TOI_1,
+      disc : "Food Blog Appliation",
+      link: "/project7"
+    }
+];
+
+var settings = {
+    className: "center",
+    centerMode: true,
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    arrows : false,
+    responsive: [
+      {
+        breakpoint: 990,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+          centerMode : false
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          centerMode : false
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode : false
+        }
+      }
+    ]
+  };
+const SliderComp = () => {
+  const arrowRef = useRef(null);
+    let sliderProject = "";
+    sliderProject = data.map((item, i) => (
+        <Project item = {item} key={i}/>
+    ))
+  return (
+    <Container>
+      <Slider ref={arrowRef} {...settings}>
+      {sliderProject}
+      </Slider>
+      <Buttons>
+        <button 
+        onClick={() => arrowRef.current.slickPrev()}
+        className='back'><IoIosArrowBack/></button>
+        <button 
+        onClick={() => arrowRef.current.slickNext()}
+        className='next'><IoIosArrowForward/></button>
+      </Buttons>
+    </Container>
+  )
+}
+
+export default SliderComp;
+
+const Container = styled.div`
+  position: relative;
+`
+
+const Buttons = styled.div`
+  button{
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255, 0.100);
+    cursor: pointer;
+    color: #01be96;
+    border: none;
+    position: absolute;
+    top: 45%;
+    right: -1rem;
+  }
+
+  .back{
+    left: -1rem;
+  }
+`
