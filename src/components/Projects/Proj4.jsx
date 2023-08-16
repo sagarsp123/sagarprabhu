@@ -53,7 +53,7 @@ const Project4 = () => {
 
         <Content>
           Website/Github (My Work):
-          <ButtonLink href="https://github.com/sagarsp123/-Kaggle_Project-Home-Credit-Default-Risk-Analysis-System" target="_blank" rel="noopener noreferrer">
+          <ButtonLink href="https://github.com/sagarsp123/Loan-Prediction-Analysis-System" target="_blank" rel="noopener noreferrer">
             Code
           </ButtonLink>  
         </Content>

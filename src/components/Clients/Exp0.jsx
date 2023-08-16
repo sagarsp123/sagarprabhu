@@ -6,6 +6,24 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IDAH from "../assets/IDAH.png";
+import styled from 'styled-components';
+
+
+const BoldTitle = styled.h4`
+    font-weight: bold;
+`;
+
+const MediumBlackText = styled.p`
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    margin-left: 8px;
+`;
+
+const ContentContainer = styled.div`
+    display: flex;
+    align-items: baseline;
+    
+`;
 
 export default function Exp0() {
   return (
@@ -18,26 +36,39 @@ export default function Exp0() {
       />
       <CardContent sx={{ maxWidth: 750, height: 640}} style={{ backgroundColor: '#ff8d28'}}>
         <br></br>
-        <h3>
-          Company: Indiana University Research- IDAH, Office of Vice Provost
-        </h3>
+        <ContentContainer>
+        <BoldTitle>Company:</BoldTitle>
+        <MediumBlackText>Indiana University Research- IDAH, Office of Vice Provost</MediumBlackText>
+        </ContentContainer>
         <br></br>
-        <h3>
-          Designation: Lead Web Developer (Part-time)
-        </h3>
+        <ContentContainer>
+        <BoldTitle>Designation:</BoldTitle> 
+        <MediumBlackText>Lead Web Developer (Part-time)</MediumBlackText>
+        </ContentContainer>
         <br></br>
-        <h3>Position Duration: July 2023 - Present</h3>
+        <ContentContainer>
+        <BoldTitle>Position Duration: </BoldTitle>
+        <MediumBlackText>July 2023 - Present</MediumBlackText>
+        </ContentContainer>
         <br></br>
-        <h3>Work Location: Bloomington, IN, United States</h3>
+        <ContentContainer>
+          <BoldTitle>Work Location: </BoldTitle>
+          <MediumBlackText>Bloomington, Indiana</MediumBlackText>
+        </ContentContainer>
         <br></br>
-        <h3>Work Description:</h3>
+        <ContentContainer>
+          <BoldTitle>Technologies: </BoldTitle>
+          <MediumBlackText>JavaScript, Ruby, Jekyll-Liquid, HTML5, CSS3, Figma</MediumBlackText>
+        </ContentContainer>
+        <br></br>
+        <h4>Work Description:</h4>
         <ul style={{ listStyle: 'disc', fontSize: '1.3em', margin: '0.8em' }}>
-        <li><Typography variant="body2" color="text.primary" fontSize='0.8em'>
+        <li><Typography variant="body2" color="text.primary" fontSize='0.73em'>
         Worked with a PhD Research Awardee on developing a Jekyll-Liquid web platform for a New York Academy of
         Medicine and Data Fluencies Grants funded research project, the Tuberculosis Specimen Dissertation.
         </Typography>
         </li>
-        <li><Typography variant="body2" color="text.primary" fontSize='0.8em'>
+        <li><Typography variant="body2" color="text.primary" fontSize='0.73em'>
         Developed three main features which included shifting opacity scaling (0 to 100%) to render parts of texts and images
         illegible to users, item card embedding- object index filtering and mouseover functionality to embrace legibility.
         </Typography>

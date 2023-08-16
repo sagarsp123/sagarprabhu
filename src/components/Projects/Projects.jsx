@@ -9,7 +9,7 @@ const Projects = () => {
         <Zoom>
             <h1>Recent <span className="green">Projects</span></h1>
             <br></br>
-            <h4>Check out some of my technical and professional projects</h4>
+            <h4>Check out some of my professional and personal projects</h4>
         </Zoom>
         <br></br>
         <Slide>

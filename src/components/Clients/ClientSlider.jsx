@@ -9,18 +9,35 @@ import Exp2 from './Exp2'
 import Exp3 from './Exp3'
 import Exp4 from './Exp4'
 import Exp5 from './Exp5'
-
+import Exp6 from './Exp6'
 
 const ClientSlider = (props) => {
     
     const {company, position, link, disc} = props.item;
+    const { openPopup } = props; // Extract openPopup from props
 
-    const [popupVisible, setPopupVisible] = useState(false);
-
-    const togglePopup = () => {
-        setPopupVisible(!popupVisible);
+    const getPopupContent = (link) => {
+        switch (link) {
+            case '/Exp0':
+                return <Exp0 />;
+            case '/Exp1':
+                return <Exp1/>;
+            case '/Exp2':
+                return <Exp2/>;
+            case '/Exp3':
+                return <Exp3/>;
+            case '/Exp4':
+                return <Exp4/>;
+            case '/Exp5':
+                return <Exp5/>;
+            case '/Exp6':
+                return <Exp6/>;    
+            // Add cases for other links if needed
+            default:
+                return null;
+        }
     };
-    
+
   return (
     <Container>
         <header>
@@ -33,30 +50,13 @@ const ClientSlider = (props) => {
             {disc}
         </Body>
         <Footer>
-            <div className="details">
-            <Link to={link}>Read More</Link>
-            </div>
-        </Footer>
-
-        {popupVisible && (
-        <PopupOverlay>
-            <PopupContainer>
-                <button className="close-button" onClick={togglePopup}>
-                    Close
-                </button>
-                {link === '/Exp0' && <Exp0 />}
-                {link === '/Exp1' && <Exp1 />}
-                {link === '/Exp2' && <Exp2 />}
-                {link === '/Exp3' && <Exp3 />}
-                {link === '/Exp4' && <Exp4 />}
-                {link === '/Exp5' && <Exp5 />}
-
-            </PopupContainer>
-        </PopupOverlay>
-    )}
-
-    </Container>
-            
+                <div className="details">
+                    <button onClick={() => openPopup(getPopupContent(link))}>
+                        Read More
+                    </button>
+                </div>
+            </Footer>
+        </Container>    
                 
   );
 };
@@ -76,7 +76,23 @@ const Container = styled.div`
     margin: 0 1rem;
 `
 
-const PopupOverlay = styled.div`
+export const PopupContainer = styled.div`
+    // Define your popup container styles here
+    //padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 800px;
+    text-align: left;
+    overflow-y: auto; // Enable scrolling within the popup
+    z-index: 10000; // Adjust z-index to be above overlay
+    position: absolute; // Use 'absolute' positioning
+    top: 50%; // Adjust vertical position as needed
+    left: 50%; // Adjust horizontal position as needed
+    transform: translate(-50%, -50%); // Center the popup
+`;
+
+export const PopupOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -86,29 +102,33 @@ const PopupOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; // Disable scrolling
+  z-index: 9999; // Adjust z-index as needed
 `;
 
-const PopupContainer = styled.div`
-    background-color: white;
-    padding: 2rem;
-    max-width: 80%;
-    max-height: 80%;
-    overflow-y: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-
-    .close-button {
-        background-color: #01be96;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-    }
+export const CloseButtonContainer = styled.div`
+    border: 1px solid #333;
+    background: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
 `;
 
+export const CloseButton = styled.button`
+background: transparent;
+border: 2px;
+font-size: 17px;
+color: black;
+cursor: pointer;
+margin-top: 30px; /* Add some spacing between content and button */
+`;
 
 const Header = styled.div`
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -124,6 +144,7 @@ const Header = styled.div`
     }
 `
 const Body = styled.p`
+    
     font-size: 1rem;
     margin-bottom: 1.5rem;
 `

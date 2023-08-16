@@ -9,7 +9,7 @@ import Kaggle0 from "../assets/Proj_4.PNG";
 import Cadent_Logo from "../assets/Cadent_Logo.jpg";
 import TOI_1 from "../assets/TOI_1.PNG";
 import Product_3 from "../assets/Product_3.png";
-
+import Blog1 from "../assets/Blog1.png";
 
 let data = [
     {
@@ -43,8 +43,8 @@ let data = [
       link: "/project6"
     },
     {
-      img : TOI_1,
-      disc : "Food Blog Appliation",
+      img : Blog1,
+      disc : "Food Blog Appliation- AWS",
       link: "/project7"
     }
 ];

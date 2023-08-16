@@ -7,16 +7,15 @@ const Header = () => {
   return (
     <Container bar={bar}>
         <Logo>
-            <span className='green'><GiCandleFlame/></span>
-            <h1>Portfolio</h1>
+            <h1>My Portfolio</h1>
         </Logo>
         <Nav bar={bar}>
             <span><a href="/">Home</a></span>
             <span><a href="#service">Services</a></span>
-            <span><a href="#service">Technology Stack</a></span>
+            <span><a href="#stack">Technical Skills</a></span>
             <span><a href="#client">Professional Experience</a></span>
             <span><a href="#project">Projects</a></span>
-            <span><a href="#footer">Certifications</a></span>
+            <span><a href="#certificate">Certifications</a></span>
         </Nav>
         <div
         onClick={() => setBar(!bar)}

@@ -8,6 +8,7 @@ import { BsFacebook, BsSlack } from "react-icons/bs";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
 
+
 const Footer = () => {
   const scrollUp = () => {
     window.scroll({
@@ -19,8 +20,9 @@ const Footer = () => {
     <Container id="footer">
       <Profile>
         <Slide direction="left" delay={1}>
-          <h1>Portfolio</h1>
+          <h2>Sagar Srinivas Prabhu</h2>
         </Slide>
+        <br></br>
         <div className="address">
           <Slide direction="left">
             <h1>Address:</h1>
@@ -29,29 +31,33 @@ const Footer = () => {
             <p>Indiana, United States (Open to Relocate within US)</p>
           </Slide>
         </div>
+        <br></br>
         <div className="links">
           <Slide direction="left">
             <h1>Contact me directly:</h1>
           </Slide>
-          <div>
+          <div className="contact-items">
+            <div className="contact-item">
             <span>
               <FiPhoneCall />
             </span>
             <Slide direction="left">
-              <a href="tel:+1 (812)-650-8652">+1 (812)-650-8652</a>
+              <a href="tel:+1 (812)-650-8652" style={{ color: 'white' }}>+1 (812)-650-8652</a>
             </Slide>
           </div>
-          <div>
+          <div className="contact-item">
             <Slide direction="left">
               <span>
                 <HiOutlineMailOpen />
               </span>
             </Slide>
             <Slide>
-              <a href="mailto:prabhusagar1305@gmail.com">prabhusagar1305@gmail.com</a>
+              <a href="mailto:prabhusagar1305@gmail.com" style={{ color: 'white' }}>prabhusagar1305@gmail.com</a>
             </Slide>
           </div>
         </div>
+        </div>
+        <br></br>
         <div className="profiles">
           <Slide direction="left">
             <h1>Check my profiles</h1>
@@ -86,7 +92,7 @@ const Footer = () => {
           </ArrowUp>
         </Fade>
       </Profile>
-      <Form>
+      {/* <Form>
         <Slide direction="right">
           <form>
             <div className="name">
@@ -110,7 +116,7 @@ const Footer = () => {
             <button>Submit</button>
           </form>
         </Slide>
-      </Form>
+      </Form> */}
     </Container>
   );
 };
@@ -125,26 +131,23 @@ const Container = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center the text content */
   @media (max-width: 840px) {
     width: 90%;
   }
-
-  @media (max-width: 650px) {
-    flex-direction: column;
-    gap: 3rem;
-  }
 `;
+
 const Profile = styled.div`
-  flex: 1;
+  width: 100%;
   .address {
+    width: 100%;
     padding: 1rem 0;
     h1 {
       font-size: 1.2rem;
     }
-
     p {
-      width: 60%;
       padding-top: 0.5rem;
       @media (max-width: 650px) {
         width: 100%;
@@ -153,34 +156,61 @@ const Profile = styled.div`
   }
 
   .links {
+    width: 100%;
+  
     h1 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
-
-    div {
+  
+    .contact-items {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      a {
-        text-decoration: none;
-        color: lightgray;
-        :hover {
-          color: orange;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+  
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+  
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #000;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50px;
+  
+          :hover {
+            background-color: orange;
+          }
+          
+          a {
+            margin-top: 0.2rem;
+            color: white; /* Set text color to white */
+            :hover {
+              color: blue; /* Change color on hover to blue */
+            }
+          }
         }
       }
     }
   }
-
+  
   .profiles {
+    width: 100%;
     h1 {
       font-size: 1.2rem;
       padding: 1rem 0;
     }
-
     .icons {
       display: flex;
       align-items: center;
+      justify-content: center; /* Center horizontally */
+      gap: 0.5rem;
 
       span {
         display: flex;
@@ -191,11 +221,9 @@ const Profile = styled.div`
         height: 2rem;
         margin-right: 0.5rem;
         border-radius: 50px;
-
         :hover {
           background-color: orange;
         }
-
         a {
           margin-top: 0.2rem;
           color: #fff;
@@ -204,6 +232,7 @@ const Profile = styled.div`
     }
   }
 `;
+
 const ArrowUp = styled.div`
   width: 2rem;
   height: 2rem;
@@ -221,6 +250,7 @@ const ArrowUp = styled.div`
     top: 16rem;
   }
 `;
+
 const Form = styled.div`
   flex: 1;
   h1 {
@@ -236,6 +266,7 @@ const Form = styled.div`
     .email,
     .message {
       display: flex;
+      flex-direction: column; /* Adjusted */
       border: 1px solid gray;
       margin-bottom: 0.5rem;
       input,

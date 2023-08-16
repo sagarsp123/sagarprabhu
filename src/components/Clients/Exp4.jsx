@@ -6,6 +6,24 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Billeasy from "../assets/Billeasy.jpg";
+import styled from 'styled-components'
+
+
+const BoldTitle = styled.h4`
+    font-weight: bold;
+`;
+
+const MediumBlackText = styled.p`
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    margin-left: 8px;
+`;
+
+const ContentContainer = styled.div`
+    display: flex;
+    align-items: baseline;
+    
+`;
 
 export default function Exp4() {
   return (
@@ -18,21 +36,34 @@ export default function Exp4() {
       />
       <CardContent sx={{ maxWidth: 750, height: 640}} style={{ backgroundColor: '#ff8d28'}}>
         <br></br>
-        <h3>
-          Company: Billeasy
-        </h3>
+        <ContentContainer>
+        <BoldTitle>Company: </BoldTitle>
+        <MediumBlackText>Billeasy</MediumBlackText>
+        </ContentContainer>
         <br></br>
-        <h3>
-          Designation: Data Analyst Intern
-        </h3>
+        <ContentContainer>
+        <BoldTitle>Designation: </BoldTitle>
+        <MediumBlackText>Data Analyst Intern</MediumBlackText>
+        </ContentContainer>
         <br></br>
-        <h3>Position Duration: April 2018 - October 2018</h3>
+        <ContentContainer>
+        <BoldTitle>Position Duration: </BoldTitle>
+        <MediumBlackText>April 2018 - October 2018</MediumBlackText>
+        </ContentContainer>
         <br></br>
-        <h3>Work Location: Mumbai, India</h3>
+        <ContentContainer>
+        <BoldTitle>Work Location: </BoldTitle>
+        <MediumBlackText>Mumbai, India</MediumBlackText>
+        </ContentContainer>
         <br></br>
-        <h3>Work Description:</h3>
+        <ContentContainer>
+          <BoldTitle>Technologies: </BoldTitle>
+          <MediumBlackText>Data Science, Analytics, Machine Learning Algorithms, EDA, Visualization, Power BI, GIT, JIRA</MediumBlackText>
+        </ContentContainer>
+        <br></br>
+        <h4>Work Description:</h4>
         <ul style={{ listStyle: 'disc', fontSize: '1.3em', margin: '0.8em' }}>
-        <li><Typography variant="body2" color="text.primary" fontSize='0.8em'>
+        <li><Typography variant="body2" color="text.primary" fontSize='0.73em'>
         Collaborated with cross-functional teams utilizing data pre-processing, EDA on ML modeled data with advising dynamic
         sales trends on Power BI visualization tool to stakeholders and leading to a improvized customer feedback process by 8x.        </Typography>
         </li>

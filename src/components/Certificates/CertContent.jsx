@@ -119,7 +119,7 @@ const CertContent = () => {
 
 return (
   <div>
-    <Container id='project'>
+    <Container id='certificate'>
       <Zoom>
         <h1>My <span className="green">Achievements</span></h1>
         {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque 

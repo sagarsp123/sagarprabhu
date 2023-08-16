@@ -3,10 +3,17 @@ import styled from "styled-components";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { RiGithubLine  } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
+import { GrDocumentPdf } from "react-icons/gr";
 import { Slide } from "react-awesome-reveal";
 import Sagar from "../assets/Sagar.jpeg";
 
 const ProfComponent = () => {
+  const scrollDown = () => {
+    window.scroll({
+      top: document.body.scrollHeight, // Scroll to the bottom of the screen
+      behavior: 'smooth', // Add smooth scrolling effect
+    });
+  };
   return (
     <Container id="home">
       <Slide direction="left">
@@ -24,13 +31,8 @@ const ProfComponent = () => {
             A Computer Science Master's student at Indiana University, a passionate learner and computer freak who loves developing 
             software applications, a enthusiast of learning new technologies...  
           </p>
-          {/* <h3>Software Engineer, Web Developer and UI/UX designer</h3> */}
-          {/* <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-            iusto. Adipisci in qui officia provident tenetur sequi, deserunt
-            corporis quos?
-          </p> */}
-          <button>Let's talk</button>
+          
+          <button onClick={scrollDown}>Let's talk</button>
           <br></br>
           <br></br>
           <br></br>
@@ -54,8 +56,8 @@ const ProfComponent = () => {
               <br></br>
               <h2>Resume</h2>
               <span>
-                <a href="/">
-                
+                <a href="https://drive.google.com/file/d/1RfWMChbLTtffRdOAXYuKjv2afK-lccsT/view?usp=sharing">
+                <GrDocumentPdf/>
                 </a>
               </span>
               

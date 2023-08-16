@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import TOI_1 from "../assets/TOI_1.PNG";
-import TOI_2 from "../assets/TOI_2.PNG";
-import TOI_3 from "../assets/TOI_3.PNG";
+import Blog1 from "../assets/Blog1.png";
+import Blog2 from "../assets/Blog2.png";
+import Blog3 from "../assets/Blog3.png";
 
 
 const Project7 = () => {
   return (
     <Wrapper>
       <PicturesBar>
-        <Picture src={TOI_1} alt="TOI_1" />
-        <Picture src={TOI_2} alt="TOI_2" />
-        <Picture src={TOI_3} alt="TOI_3" />
+        <Picture src={Blog1} alt="Blog1" />
+        <Picture src={Blog2} alt="Blog2" />
+        <Picture src={Blog3} alt="Blog3" />
       </PicturesBar>
     <hr>
     </hr>

@@ -38,11 +38,11 @@ const Layout = () => {
       </Banner>
       <Services />
       <LightColor>
-        <Projects />
-      </LightColor>
       <Stack/>
-      <LightColor>
+      </LightColor>
       <Clients />
+      <LightColor>
+      <Projects />
       </LightColor>
       <CertContent/>
       <LightColor>
