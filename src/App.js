@@ -344,7 +344,7 @@ const Exp5Page = () => {
 
 function App() {
   return (
-    <Router basename="/SagarPrabhu">      
+    <Router basename="https://sagarsp123.github.io/SagarPrabhu">      
         <Container>
           <Routes>
             <Route path="/" element={<Layout />} />
