@@ -1,8 +1,8 @@
 {
-  "homepage": "https://github.com/sagarsp123/sagarprabhu.github.io/",
+  "homepage": "https://sagarsp123.github.io/sagarprabhu",
   "name": "yt-portfolio",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
